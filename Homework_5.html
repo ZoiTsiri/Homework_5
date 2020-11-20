@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Classwork #1</title>
+</head>
+<body>
+
+	<script>
+		'use strict';
+
+		let a = 1, b = 100;
+		let counter = 0;
+
+		alert(`Think a number between ${a} and ${b}`);
+
+		while (true && counter <= 7) {
+			if (counter === 7) {
+			alert(`There is something fishy about your answers...`);
+			break;
+			}
+
+			let c = Math.floor((a + b) / 2); // Average (integer) of a & b
+
+			let foundIt = confirm(`Is it ${c}?\n\nPress 'OK' if yes, or 'Cancel' otherwise \n\n ${counter}`);
+			if (foundIt) {
+				counter++;
+				alert(`I found the number you were thinking about ${c} in ${counter} try(ies)!`);
+				break;
+			}  	// answer === true
+
+
+			let larger = confirm(`Is it larger than ${c}?\n\nPress 'OK' if yes, or 'Cancel' otherwise`);
+
+			if (larger) {	
+				counter ++;		// larger === true
+				a = c + 1;
+			} else {
+				counter ++;
+				b = c - 1;
+			}
+			
+		}
+		
+	</script>
+</body>
+</html>
